@@ -100,6 +100,7 @@ bool solveBoard(vector<vector<int>> &board){
 }
 
 int main () {
+    cout<<"Enter sudoku board to solve: "<<endl;
     vector<vector<int>> board(N);
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){
@@ -113,6 +114,9 @@ int main () {
         }
     }
     cout<<endl;
-    if(solveBoard(board)) printBoard(board);
-    else cout<<"Not solvable.";
+    if(solveBoard(board)){
+        cout<<"\nSolved board: "<<endl;
+        printBoard(board);
+    } 
+    else cout<<"\nNot solvable."<<endl;
 }
